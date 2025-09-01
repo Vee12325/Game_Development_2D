@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://7egb2012ff3b"]
+[gd_scene load_steps=19 format=4 uid="uid://7egb2012ff3b"]
 
 [ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_t4c53"]
 [ext_resource type="PackedScene" uid="uid://cq32mohonpsw3" path="res://Tile Maps/grass-tiles-01.tscn" id="3_rjvdv"]
@@ -12,6 +12,8 @@
 [ext_resource type="AudioStream" uid="uid://io7jxqk648xa" path="res://Levels/music/example_music_01.ogg" id="6_7wr3y"]
 [ext_resource type="PackedScene" uid="uid://cf0a8hxch6kfd" path="res://Props/pot/pot.tscn" id="7_y3q1t"]
 [ext_resource type="Texture2D" uid="uid://dyh4c6uj6q8lm" path="res://Battleground2/Bright/wall@windows.png" id="8_c2gse"]
+[ext_resource type="PackedScene" uid="uid://65ascbiim87m" path="res://Trap/newtrap.tscn" id="13_uv5ft"]
+[ext_resource type="PackedScene" uid="uid://c0u0ivqxbom5y" path="res://Trap/newmoster.tscn" id="14_qqqph"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n2ps0"]
 texture = ExtResource("4_t6rks")
@@ -1450,11 +1452,35 @@ position = Vector2(477, 129)
 [node name="Pot3" parent="." instance=ExtResource("7_y3q1t")]
 position = Vector2(-46, 157)
 
-[node name="Pot4" parent="." instance=ExtResource("7_y3q1t")]
-position = Vector2(207, 110)
+[node name="Pot4" parent="Pot3" instance=ExtResource("7_y3q1t")]
+position = Vector2(253, -47)
 
 [node name="Pot5" parent="." instance=ExtResource("7_y3q1t")]
 position = Vector2(360, 314)
 
 [node name="Pot6" parent="." instance=ExtResource("7_y3q1t")]
 position = Vector2(450, 129)
+
+[node name="newtrap" parent="." instance=ExtResource("13_uv5ft")]
+position = Vector2(324, 340)
+
+[node name="newtrap2" parent="." instance=ExtResource("13_uv5ft")]
+position = Vector2(16, 342)
+
+[node name="newtrap3" parent="." instance=ExtResource("13_uv5ft")]
+position = Vector2(-3, 126)
+
+[node name="newtrap4" parent="." instance=ExtResource("13_uv5ft")]
+position = Vector2(462, 186)
+
+[node name="newtrap5" parent="." instance=ExtResource("13_uv5ft")]
+position = Vector2(182, 224)
+
+[node name="newmonster1" parent="." instance=ExtResource("14_qqqph")]
+position = Vector2(64, 110)
+
+[node name="newmonter2" parent="." instance=ExtResource("14_qqqph")]
+position = Vector2(431, 235)
+
+[node name="newmonter3" parent="." instance=ExtResource("14_qqqph")]
+position = Vector2(-41, 361)
