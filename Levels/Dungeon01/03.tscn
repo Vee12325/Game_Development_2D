@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://caussts14k3by"]
+[gd_scene load_steps=11 format=4 uid="uid://caussts14k3by"]
 
 [ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_hvkdx"]
 [ext_resource type="AudioStream" uid="uid://bss1hbkoufxql" path="res://Levels/music/example_music_03.ogg" id="2_7ft4o"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b7x3cvq6i0qvf" path="res://Enemies/Slime/slime.tscn" id="6_jxipa"]
 [ext_resource type="PackedScene" uid="uid://d0wf2qqncvj5t" path="res://GeneralNodes/ItemDropper/item_dropper.tscn" id="7_wt5pl"]
 [ext_resource type="Resource" uid="uid://dsahpb7gtws3g" path="res://Items/key_dungeon.tres" id="8_nq3e6"]
+[ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://Enemies/goblin/goblin.tscn" id="10_1uyi3"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_hvkdx")
@@ -64,5 +65,29 @@ position = Vector2(743, 295)
 [node name="ItemDropper" parent="." instance=ExtResource("7_wt5pl")]
 position = Vector2(662, 80)
 item_data = ExtResource("8_nq3e6")
+
+[node name="Goblin" parent="." instance=ExtResource("10_1uyi3")]
+position = Vector2(244, -11)
+
+[node name="Goblin2" parent="." instance=ExtResource("10_1uyi3")]
+position = Vector2(542, -57)
+
+[node name="Goblin3" parent="." instance=ExtResource("10_1uyi3")]
+position = Vector2(144, 309)
+
+[node name="Goblin4" parent="." instance=ExtResource("10_1uyi3")]
+position = Vector2(741, 192)
+
+[node name="Goblin5" parent="." instance=ExtResource("10_1uyi3")]
+position = Vector2(198, -196)
+
+[node name="Goblin6" parent="." instance=ExtResource("10_1uyi3")]
+position = Vector2(733, -94)
+
+[node name="Goblin7" parent="." instance=ExtResource("10_1uyi3")]
+position = Vector2(463, -177)
+
+[node name="Goblin8" parent="." instance=ExtResource("10_1uyi3")]
+position = Vector2(650, 243)
 
 [connection signal="enemies_defeated" from="EnemyCounter" to="ItemDropper" method="drop_item"]
