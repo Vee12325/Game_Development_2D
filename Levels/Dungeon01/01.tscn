@@ -1,16 +1,19 @@
-[gd_scene load_steps=12 format=4 uid="uid://fxcoynik8gug"]
+[gd_scene load_steps=15 format=4 uid="uid://fxcoynik8gug"]
 
 [ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_p8h4r"]
 [ext_resource type="AudioStream" uid="uid://bss1hbkoufxql" path="res://Levels/music/example_music_03.ogg" id="2_sa7q0"]
 [ext_resource type="PackedScene" uid="uid://bcskysr5no5a6" path="res://Tile Maps/dungeon_tiles_01.tscn" id="3_bpaqg"]
 [ext_resource type="PackedScene" uid="uid://dr4blo7ya448q" path="res://Levels/player_spawn.tscn" id="3_sp6rm"]
 [ext_resource type="PackedScene" uid="uid://vlpiuopcomwi" path="res://Levels/level_transition.tscn" id="4_bwwsp"]
-[ext_resource type="PackedScene" uid="uid://ch2oxh3rsa2fr" path="res://Interactables/dungeon/pressure_plate.tscn" id="5_hd3kv"]
+[ext_resource type="PackedScene" uid="uid://ch2oxh3rsa2fr" path="res://Interactables/dungeon/scripts/pressure_plate.tscn" id="5_hd3kv"]
 [ext_resource type="PackedScene" uid="uid://da4qq8gb0idce" path="res://Interactables/dungeon/barred_door.tscn" id="6_ffenb"]
 [ext_resource type="PackedScene" uid="uid://b523kljtfiar7" path="res://quests/utility_nodes/quest_advance_trigger.tscn" id="6_ndegm"]
 [ext_resource type="PackedScene" uid="uid://cwby8egx8vwx2" path="res://quests/utility_nodes/quest_activated_switch.tscn" id="6_rsdf3"]
 [ext_resource type="PackedScene" uid="uid://b4jqibhvnwmda" path="res://Interactables/dungeon/pushable_statue.tscn" id="7_6thod"]
 [ext_resource type="Resource" uid="uid://cvnr3a38pmudn" path="res://quests/recover_lost_flute.tres" id="7_cweoc"]
+[ext_resource type="PackedScene" uid="uid://c3680a4tx63yj" path="res://Levels/Dungeon01/mob.tscn" id="12_n8j0c"]
+[ext_resource type="PackedScene" uid="uid://b7x3cvq6i0qvf" path="res://Enemies/Slime/slime.tscn" id="13_7snd3"]
+[ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://Enemies/goblin/goblin.tscn" id="14_jkwh1"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_p8h4r")
@@ -54,15 +57,42 @@ level = "res://Levels/Dungeon01/02.tscn"
 side = 2
 
 [node name="PressurePlate" parent="." instance=ExtResource("5_hd3kv")]
-position = Vector2(192, 112)
+position = Vector2(111, 79)
 
 [node name="BarredDoor" parent="." instance=ExtResource("6_ffenb")]
-position = Vector2(224, 55)
+position = Vector2(225, 54)
 
 [node name="PushableStatue" parent="." instance=ExtResource("7_6thod")]
-position = Vector2(320, 113)
+position = Vector2(325, 80)
 persistent = true
 persistent_location = Vector2(191, 114)
+
+[node name="PushableStatue2" parent="." instance=ExtResource("7_6thod")]
+position = Vector2(196, 79)
+
+[node name="PushableStatue3" parent="." instance=ExtResource("7_6thod")]
+position = Vector2(140, 171)
+
+[node name="PushableStatue4" parent="." instance=ExtResource("7_6thod")]
+position = Vector2(377, 166)
+
+[node name="mob" parent="." instance=ExtResource("12_n8j0c")]
+position = Vector2(130, 122)
+
+[node name="Slime" parent="." instance=ExtResource("13_7snd3")]
+position = Vector2(271, 107)
+
+[node name="Slime2" parent="." instance=ExtResource("13_7snd3")]
+position = Vector2(335, 164)
+
+[node name="Slime3" parent="." instance=ExtResource("13_7snd3")]
+position = Vector2(383, 91)
+
+[node name="Goblin" parent="." instance=ExtResource("14_jkwh1")]
+position = Vector2(192, 118)
+
+[node name="Goblin2" parent="." instance=ExtResource("14_jkwh1")]
+position = Vector2(401, 122)
 
 [connection signal="entered_from_here" from="LevelTransition" to="LevelTransition/QuestActivatedSwitch/QuestAdvanceTrigger" method="advance_quest"]
 [connection signal="activated" from="PressurePlate" to="BarredDoor" method="open_door"]
