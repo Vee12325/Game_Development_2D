@@ -272,7 +272,8 @@ position = Vector2(144, 210)
 position = Vector2(121, 210)
 
 [node name="Treasure-chest" parent="." instance=ExtResource("27_w21e7")]
-position = Vector2(111, 63)
+visible = false
+position = Vector2(108, 68)
 item_data = ExtResource("25_krow2")
 
 [node name="ItemPickup" parent="." instance=ExtResource("27_s3up8")]
