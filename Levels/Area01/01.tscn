@@ -544,7 +544,7 @@ size = 3
 side = 1
 
 [node name="LevelTransition3" parent="." instance=ExtResource("4_b5wk2")]
-position = Vector2(144, 56)
+position = Vector2(107, 63)
 level = "res://Levels/Dungeon01/01.tscn"
 center_player = true
 size = 3
