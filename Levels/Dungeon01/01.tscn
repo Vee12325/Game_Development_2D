@@ -58,7 +58,7 @@ level = "res://Levels/Dungeon01/02.tscn"
 side = 2
 
 [node name="PressurePlate" parent="." instance=ExtResource("5_hd3kv")]
-position = Vector2(399, 239)
+position = Vector2(114, 80)
 
 [node name="BarredDoor" parent="." instance=ExtResource("6_ffenb")]
 position = Vector2(225, 54)
@@ -72,10 +72,10 @@ persistent_location = Vector2(191, 114)
 position = Vector2(196, 79)
 
 [node name="PushableStatue3" parent="." instance=ExtResource("7_6thod")]
-position = Vector2(14, 327)
+position = Vector2(117, 216)
 
 [node name="PushableStatue4" parent="." instance=ExtResource("7_6thod")]
-position = Vector2(394, 334)
+position = Vector2(397, 208)
 
 [node name="mob" parent="." instance=ExtResource("12_n8j0c")]
 position = Vector2(-153, 320)
