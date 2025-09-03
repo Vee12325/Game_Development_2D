@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bm01dty876pk3" path="res://Enemies/Scripts/enemy.gd" id="1_daaqd"]
 [ext_resource type="Texture2D" uid="uid://dxda6pdclrpa" path="res://Player/Sprites/Shadow.png" id="1_mx3qt"]
 [ext_resource type="PackedScene" uid="uid://cpvl4rru3x52v" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="2_abt64"]
-[ext_resource type="Texture2D" uid="uid://dfb1ouyn4kesq" path="res://Enemies/Slime/Slime.png" id="2_xu6l6"]
+[ext_resource type="Texture2D" uid="uid://dfb1ouyn4kesq" path="res://Enemies/Slime.png" id="2_xu6l6"]
 [ext_resource type="PackedScene" uid="uid://c041sb462wu22" path="res://GeneralNodes/HitBox/hit_box.tscn" id="3_3b6qp"]
 [ext_resource type="Script" uid="uid://ktscfjqbpjb" path="res://Enemies/Scripts/enemy_state_machine.gd" id="4_oyk2s"]
 [ext_resource type="Script" uid="uid://ky7luyeckccy" path="res://Enemies/Scripts/states/enemy_state_idle.gd" id="5_7ibxc"]
