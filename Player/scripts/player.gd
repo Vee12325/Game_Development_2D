@@ -175,3 +175,5 @@ func _on_player_leveled_up() -> void:
 func _on_equipment_changed() -> void:
 	update_damage_values()
 	defense_bonus = PlayerManager.INVENTORY_DATA.get_defense_bonus()
+	
+	
