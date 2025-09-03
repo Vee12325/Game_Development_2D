@@ -1846,11 +1846,9 @@ wall_min_slide_angle = 0.174533
 script = ExtResource("1_jeo53")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
 position = Vector2(0, -16)
 scale = Vector2(1.05664, 1.07617)
 texture = ExtResource("36_jp1hh")
-texture_scale = 1.47
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 show_behind_parent = true
