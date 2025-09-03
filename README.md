@@ -1,13 +1,8 @@
 # Platformer 2D Game Project
+
 โครงงาน Game 2D
-
 วิชา CP352203-Computer Game Development   ภาคการศึกษาต้น ปีการศึกษา 2568
-
-ชื่อเกม :  EPIC MYSTERIOUS DUNGREON
-
-โครงงานเกม **Platformer 2D**  
-รายวิชา **Computer Game Development**  
-ปีการศึกษา 2025
+ชื่อเกม :  **EPIC MYSTERIOUS DUNGREON**
 
 ---
 
