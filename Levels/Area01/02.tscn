@@ -354,7 +354,7 @@ position = Vector2(301, 127)
 
 [node name="Treasure-chest" parent="." instance=ExtResource("27_w21e7")]
 visible = false
-position = Vector2(111, 63)
+position = Vector2(191, 63)
 item_data = ExtResource("25_krow2")
 
 [node name="ItemPickup" parent="." instance=ExtResource("27_s3up8")]
@@ -374,7 +374,7 @@ position = Vector2(169.626, 137.626)
 item_data = ExtResource("31_fw76p")
 
 [node name="Slime" parent="." instance=ExtResource("33_mdb57")]
-position = Vector2(610, 349)
+position = Vector2(198, 262)
 
 [node name="Arrow" parent="." instance=ExtResource("33_gm670")]
 position = Vector2(96, 200)
@@ -803,4 +803,4 @@ position = Vector2(574, 432)
 position = Vector2(190, -56)
 
 [node name="Goblin8" parent="." instance=ExtResource("35_m2uij")]
-position = Vector2(572, 358)
+position = Vector2(1718, 835)
