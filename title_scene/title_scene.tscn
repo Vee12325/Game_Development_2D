@@ -1,14 +1,17 @@
-[gd_scene load_steps=13 format=4 uid="uid://5t7fprdld7j"]
+[gd_scene load_steps=16 format=4 uid="uid://5t7fprdld7j"]
 
 [ext_resource type="Script" uid="uid://c2mayusmuuk6r" path="res://title_scene/title_scene.gd" id="1_lt026"]
 [ext_resource type="AudioStream" uid="uid://cph6d67x0q2hx" path="res://title_scene/audio/waves.mp3" id="2_1kmx1"]
 [ext_resource type="PackedScene" uid="uid://b4jqibhvnwmda" path="res://Interactables/dungeon/pushable_statue.tscn" id="2_e3llm"]
-[ext_resource type="Texture2D" uid="uid://ddmcvrb1ufo3g" path="res://title_scene/sprites/title.png" id="3_l4xkg"]
 [ext_resource type="AudioStream" uid="uid://bs7rsijo2pb3f" path="res://title_scene/audio/menu_focus.wav" id="3_w8rst"]
 [ext_resource type="AudioStream" uid="uid://08aqunggwta1" path="res://title_scene/audio/menu_select.wav" id="4_i0vak"]
 [ext_resource type="PackedScene" uid="uid://dr4blo7ya448q" path="res://Levels/player_spawn.tscn" id="5_e557l"]
 [ext_resource type="PackedScene" uid="uid://bcskysr5no5a6" path="res://Tile Maps/dungeon_tiles_01.tscn" id="5_gqgka"]
+[ext_resource type="Texture2D" uid="uid://dlbdbnrnvfh8m" path="res://title_scene/epictitle2-removebg-preview.png" id="7_lj5tl"]
 [ext_resource type="PackedScene" uid="uid://dhr1wkvl1431s" path="res://title_scene/splash_scene.tscn" id="8_hlrge"]
+[ext_resource type="PackedScene" uid="uid://c3680a4tx63yj" path="res://Levels/Dungeon01/mob.tscn" id="10_fp78m"]
+[ext_resource type="PackedScene" uid="uid://b7x3cvq6i0qvf" path="res://Enemies/Slime/slime.tscn" id="11_1falw"]
+[ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://Enemies/goblin/goblin.tscn" id="12_xyq50"]
 
 [sub_resource type="Animation" id="Animation_dt7ym"]
 length = 0.001
@@ -74,6 +77,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = -4.0
+offset_right = 27.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -82,15 +89,18 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = 3.0
+offset_right = -25.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.516)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
-position = Vector2(247, 108)
-texture = ExtResource("3_l4xkg")
-hframes = 4
-vframes = 2
+position = Vector2(233, 98)
+scale = Vector2(0.782, 0.558)
+texture = ExtResource("7_lj5tl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/Sprite2D"]
 libraries = {
@@ -105,10 +115,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -66.0
-offset_top = 38.0
-offset_right = 66.0
-offset_bottom = 64.0
+offset_left = -82.0
+offset_top = 39.0
+offset_right = 78.0
+offset_bottom = 77.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "new game"
@@ -120,18 +130,35 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -66.0
-offset_top = 68.0
-offset_right = 66.0
-offset_bottom = 94.0
+offset_left = -81.0
+offset_top = 82.0
+offset_right = 75.0
+offset_bottom = 116.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "continue"
 
 [node name="SplashScene" parent="CanvasLayer" instance=ExtResource("8_hlrge")]
+visible = false
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_e557l")]
+visible = false
 position = Vector2(240, 139)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 max_polyphony = 4
+
+[node name="mob" parent="." instance=ExtResource("10_fp78m")]
+position = Vector2(46, 225)
+
+[node name="Slime2" parent="." instance=ExtResource("11_1falw")]
+position = Vector2(130, 232)
+
+[node name="Slime3" parent="." instance=ExtResource("11_1falw")]
+position = Vector2(403, 239)
+
+[node name="Goblin" parent="." instance=ExtResource("12_xyq50")]
+position = Vector2(165, 182)
+
+[node name="Goblin2" parent="." instance=ExtResource("12_xyq50")]
+position = Vector2(362, 210)
