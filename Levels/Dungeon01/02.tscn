@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cooteplx34jjo"]
+[gd_scene load_steps=13 format=4 uid="uid://cooteplx34jjo"]
 
 [ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_b5e4r"]
 [ext_resource type="AudioStream" uid="uid://bss1hbkoufxql" path="res://Levels/music/example_music_03.ogg" id="2_amvwt"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c3680a4tx63yj" path="res://Levels/Dungeon01/mob.tscn" id="8_os54b"]
 [ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://Enemies/goblin/goblin.tscn" id="9_6xrvw"]
 [ext_resource type="PackedScene" uid="uid://b7x3cvq6i0qvf" path="res://Enemies/Slime/slime.tscn" id="10_labp1"]
+[ext_resource type="PackedScene" uid="uid://d4nhxau2t5qvx" path="res://Props/torches/torch_dungeon.tscn" id="11_os54b"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f8v6h"]
 
@@ -49,20 +50,23 @@ position = Vector2(196, -46)
 position = Vector2(313, -45)
 
 [node name="mob" parent="." instance=ExtResource("8_os54b")]
-position = Vector2(101, 63)
+position = Vector2(96, 61)
 physics_material_override = SubResource("PhysicsMaterial_f8v6h")
+shooting_interval = 3.0
 
 [node name="mob2" parent="." instance=ExtResource("8_os54b")]
-position = Vector2(139, 164)
+position = Vector2(124, 168)
 
 [node name="mob3" parent="." instance=ExtResource("8_os54b")]
 position = Vector2(129, -22)
+shooting_interval = 3.0
 
 [node name="mob4" parent="." instance=ExtResource("8_os54b")]
-position = Vector2(286, 10)
+position = Vector2(336, 6)
 
 [node name="mob5" parent="." instance=ExtResource("8_os54b")]
-position = Vector2(290, 114)
+position = Vector2(299, 110)
+shooting_interval = 2.5
 
 [node name="Goblin" parent="." instance=ExtResource("9_6xrvw")]
 position = Vector2(202, 67)
@@ -81,3 +85,15 @@ position = Vector2(194, -12)
 
 [node name="Slime2" parent="." instance=ExtResource("10_labp1")]
 position = Vector2(374, 169)
+
+[node name="TorchDungeon" parent="." instance=ExtResource("11_os54b")]
+position = Vector2(112, -39)
+
+[node name="TorchDungeon2" parent="." instance=ExtResource("11_os54b")]
+position = Vector2(401, -46)
+
+[node name="TorchDungeon3" parent="." instance=ExtResource("11_os54b")]
+position = Vector2(114, 184)
+
+[node name="TorchDungeon4" parent="." instance=ExtResource("11_os54b")]
+position = Vector2(402, 183)
