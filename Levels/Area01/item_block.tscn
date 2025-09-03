@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7idr8kxe68ix"]
+
+[ext_resource type="Script" path="res://Levels/Area01/item_block.gd" id="1_2dimb"]
+[ext_resource type="Texture2D" path="res://Levels/Area01/tilemap_packed.png" id="1_vuvgp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4oqxr"]
+size = Vector2(73, 119)
+
+[node name="ItemBlock" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_2dimb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_vuvgp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 5.5)
+shape = SubResource("RectangleShape2D_4oqxr")
