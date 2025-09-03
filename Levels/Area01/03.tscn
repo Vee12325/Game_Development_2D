@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://di637arhv02o2"]
+[gd_scene load_steps=15 format=4 uid="uid://di637arhv02o2"]
 
 [ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_bspbj"]
 [ext_resource type="AudioStream" uid="uid://io7jxqk648xa" path="res://Levels/music/example_music_01.ogg" id="2_wavkr"]
@@ -6,9 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://dr4blo7ya448q" path="res://Levels/player_spawn.tscn" id="4_j7hqw"]
 [ext_resource type="PackedScene" uid="uid://b7x3cvq6i0qvf" path="res://Enemies/Slime/slime.tscn" id="5_6j82e"]
 [ext_resource type="PackedScene" uid="uid://vlpiuopcomwi" path="res://Levels/level_transition.tscn" id="5_40pm8"]
-[ext_resource type="PackedScene" path="res://item.tscn" id="9_crp14"]
+[ext_resource type="PackedScene" uid="uid://dj3d157pq86uj" path="res://item.tscn" id="9_crp14"]
 [ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://Enemies/goblin/goblin.tscn" id="9_lry6g"]
 [ext_resource type="Texture2D" uid="uid://yil5t3yksahm" path="res://title_scene/sprites/tilemap_packed.png" id="10_5waxo"]
+[ext_resource type="PackedScene" uid="uid://d4nhxau2t5qvx" path="res://Props/torches/torch_dungeon.tscn" id="10_lry6g"]
+[ext_resource type="PackedScene" uid="uid://cldjbf03xmdqt" path="res://Interactables/TreasureChest/treasure-chest.tscn" id="11_v72oj"]
+[ext_resource type="PackedScene" uid="uid://c0u0ivqxbom5y" path="res://Trap/newmoster.tscn" id="12_v72oj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lry6g"]
 texture = ExtResource("10_5waxo")
@@ -229,3 +232,66 @@ layer_0/tile_data = PackedInt32Array(65534, 327680, 2, 65535, 393216, 2, 0, 4587
 position = Vector2(863, 140)
 scale = Vector2(1.5, 1.5)
 script = null
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.47788, 0.47788, 0.47788, 1)
+
+[node name="TorchDungeon" parent="." instance=ExtResource("10_lry6g")]
+position = Vector2(-7, -149)
+
+[node name="TorchDungeon2" parent="." instance=ExtResource("10_lry6g")]
+position = Vector2(67, 390)
+
+[node name="TorchDungeon3" parent="." instance=ExtResource("10_lry6g")]
+position = Vector2(881, -166)
+
+[node name="TorchDungeon4" parent="." instance=ExtResource("10_lry6g")]
+position = Vector2(708, 320)
+
+[node name="Treasure-chest" parent="." instance=ExtResource("11_v72oj")]
+position = Vector2(867, 111)
+
+[node name="item2" parent="." instance=ExtResource("9_crp14")]
+position = Vector2(567, 165)
+script = null
+
+[node name="item3" parent="." instance=ExtResource("9_crp14")]
+position = Vector2(97, 162)
+script = null
+
+[node name="item4" parent="." instance=ExtResource("9_crp14")]
+position = Vector2(320, 386)
+script = null
+
+[node name="item5" parent="." instance=ExtResource("9_crp14")]
+position = Vector2(564, -173)
+script = null
+
+[node name="item6" parent="." instance=ExtResource("9_crp14")]
+position = Vector2(224, -167)
+script = null
+
+[node name="item7" parent="." instance=ExtResource("9_crp14")]
+position = Vector2(384, 15)
+script = null
+
+[node name="item8" parent="." instance=ExtResource("9_crp14")]
+position = Vector2(475, 93)
+script = null
+
+[node name="item9" parent="." instance=ExtResource("9_crp14")]
+position = Vector2(88, -56)
+script = null
+
+[node name="item10" parent="." instance=ExtResource("9_crp14")]
+position = Vector2(869, 209)
+script = null
+
+[node name="TorchDungeon5" parent="." instance=ExtResource("10_lry6g")]
+position = Vector2(436, 61)
+
+[node name="TorchDungeon6" parent="." instance=ExtResource("10_lry6g")]
+position = Vector2(71, 74)
+
+[node name="Goblin11" parent="." instance=ExtResource("12_v72oj")]
+position = Vector2(611, 175)
