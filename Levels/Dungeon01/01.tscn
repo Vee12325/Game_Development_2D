@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://fxcoynik8gug"]
+[gd_scene load_steps=16 format=4 uid="uid://fxcoynik8gug"]
 
 [ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_p8h4r"]
 [ext_resource type="AudioStream" uid="uid://bss1hbkoufxql" path="res://Levels/music/example_music_03.ogg" id="2_sa7q0"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c3680a4tx63yj" path="res://Levels/Dungeon01/mob.tscn" id="12_n8j0c"]
 [ext_resource type="PackedScene" uid="uid://b7x3cvq6i0qvf" path="res://Enemies/Slime/slime.tscn" id="13_7snd3"]
 [ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://Enemies/goblin/goblin.tscn" id="14_jkwh1"]
+[ext_resource type="PackedScene" uid="uid://d4nhxau2t5qvx" path="res://Props/torches/torch_dungeon.tscn" id="15_7snd3"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_p8h4r")
@@ -26,7 +27,7 @@ tile_map_data = PackedByteArray("AAAAAP//AQAEAAUAAAAAAAAAAQAEAAYAAAAAAAEAAQAEAAc
 position = Vector2(38, 412)
 
 [node name="LevelTransition" parent="." instance=ExtResource("4_bwwsp")]
-position = Vector2(-8, 414)
+position = Vector2(2, 426)
 level = "res://Levels/Area01/01.tscn"
 target_transition_area = "LevelTransition3"
 center_player = true
@@ -112,6 +113,42 @@ position = Vector2(396, 432)
 
 [node name="Goblin6" parent="." instance=ExtResource("14_jkwh1")]
 position = Vector2(169, 164)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.41598, 0.41598, 0.41598, 1)
+
+[node name="TorchDungeon" parent="." instance=ExtResource("15_7snd3")]
+position = Vector2(-302, 438)
+
+[node name="TorchDungeon2" parent="." instance=ExtResource("15_7snd3")]
+position = Vector2(-305, 97)
+
+[node name="TorchDungeon3" parent="." instance=ExtResource("15_7snd3")]
+position = Vector2(379, 372)
+
+[node name="TorchDungeon4" parent="." instance=ExtResource("15_7snd3")]
+position = Vector2(404, 79)
+
+[node name="TorchDungeon5" parent="." instance=ExtResource("15_7snd3")]
+position = Vector2(47, 79)
+
+[node name="TorchDungeon6" parent="." instance=ExtResource("15_7snd3")]
+position = Vector2(108, 439)
+
+[node name="TorchDungeon7" parent="." instance=ExtResource("15_7snd3")]
+position = Vector2(-170, 313)
+
+[node name="TorchDungeon8" parent="." instance=ExtResource("15_7snd3")]
+position = Vector2(113, 131)
+
+[node name="mob2" parent="." instance=ExtResource("12_n8j0c")]
+position = Vector2(-90, 231)
+
+[node name="mob3" parent="." instance=ExtResource("12_n8j0c")]
+position = Vector2(120, 157)
+
+[node name="mob4" parent="." instance=ExtResource("12_n8j0c")]
+position = Vector2(-261, 77)
 
 [connection signal="entered_from_here" from="LevelTransition" to="LevelTransition/QuestActivatedSwitch/QuestAdvanceTrigger" method="advance_quest"]
 [connection signal="activated" from="PressurePlate" to="BarredDoor" method="open_door"]
