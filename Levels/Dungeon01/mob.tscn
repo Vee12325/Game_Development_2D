@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c3680a4tx63yj"]
 
-[ext_resource type="Texture2D" uid="uid://bppq2cgm2ts7o" path="res://Levels/Dungeon01/dragon1.png" id="1_ti3mq"]
-[ext_resource type="Texture2D" uid="uid://dj1tlu7p1kkn5" path="res://Levels/Dungeon01/dragon2.png" id="2_tbf4a"]
+[ext_resource type="Script" uid="uid://mneynmtmiehs" path="res://Levels/Dungeon01/mob.gd" id="1_tbf4a"]
+[ext_resource type="PackedScene" uid="uid://ehce10qi0prp" path="res://Levels/Dungeon01/enemy_bullet.tscn" id="2_knb5n"]
 [ext_resource type="Texture2D" uid="uid://dlank4ydbauby" path="res://Levels/Dungeon01/dragon3.png" id="3_knb5n"]
 [ext_resource type="Texture2D" uid="uid://euvigt5w578b" path="res://Levels/Dungeon01/dragon4.png" id="4_kl7rs"]
 
@@ -9,10 +9,10 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ti3mq")
+"texture": ExtResource("3_knb5n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_tbf4a")
+"texture": ExtResource("4_kl7rs")
 }],
 "loop": true,
 "name": &"dragon",
@@ -36,13 +36,14 @@ size = Vector2(79, 51)
 [node name="mob" type="StaticBody2D"]
 collision_layer = 0
 collision_mask = 0
+script = ExtResource("1_tbf4a")
+fireball_scene = ExtResource("2_knb5n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-4, -1)
 scale = Vector2(0.143366, 0.137903)
 sprite_frames = SubResource("SpriteFrames_ife8n")
-animation = &"dragon2"
-frame_progress = 0.854991
+animation = &"dragon"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4.5, -0.5)
