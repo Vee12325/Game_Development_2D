@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://chcb2oelfl72f"]
+[gd_scene load_steps=36 format=4 uid="uid://chcb2oelfl72f"]
 
 [ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_1ohot"]
 [ext_resource type="AudioStream" uid="uid://io7jxqk648xa" path="res://Levels/music/example_music_01.ogg" id="2_5s7x6"]
@@ -33,6 +33,7 @@
 [ext_resource type="Resource" uid="uid://prvahwyi1iha" path="res://Items/apple.tres" id="31_fw76p"]
 [ext_resource type="PackedScene" uid="uid://c61baowgewycx" path="res://Interactables/arrow/arrow.tscn" id="33_gm670"]
 [ext_resource type="PackedScene" uid="uid://b7x3cvq6i0qvf" path="res://Enemies/Slime/slime.tscn" id="33_mdb57"]
+[ext_resource type="PackedScene" uid="uid://c3680a4tx63yj" path="res://Levels/Dungeon01/mob.tscn" id="34_gm670"]
 
 [sub_resource type="GDScript" id="GDScript_ootk3"]
 script/source = "extends Node
@@ -65,7 +66,7 @@ update_bounds = false
 position = Vector2(227, 138)
 
 [node name="Plant" parent="." instance=ExtResource("5_wa4h8")]
-position = Vector2(-331, 501)
+position = Vector2(-325, 504)
 
 [node name="Plant2" parent="." instance=ExtResource("5_wa4h8")]
 position = Vector2(-288, 504)
@@ -314,11 +315,18 @@ position = Vector2(198, 262)
 
 [node name="Arrow" parent="." instance=ExtResource("33_gm670")]
 position = Vector2(96, 200)
-fire_audio = null
 
 [node name="Arrow3" parent="." instance=ExtResource("33_gm670")]
 position = Vector2(96, 200)
 
 [node name="Arrow2" parent="." instance=ExtResource("33_gm670")]
 position = Vector2(92, 233)
-fire_audio = null
+
+[node name="mob" parent="." instance=ExtResource("34_gm670")]
+position = Vector2(2, 237)
+
+[node name="mob2" parent="." instance=ExtResource("34_gm670")]
+position = Vector2(0, 287)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.462291, 0.462291, 0.462291, 1)
