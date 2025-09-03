@@ -320,6 +320,7 @@ position = Vector2(96, 200)
 
 [node name="Arrow2" parent="." instance=ExtResource("33_gm670")]
 position = Vector2(92, 233)
+<<<<<<< Updated upstream
 
 [node name="Slime2" parent="." instance=ExtResource("33_mdb57")]
 position = Vector2(-273, 605)
@@ -371,3 +372,5 @@ position = Vector2(95, 513)
 
 [node name="Goblin13" parent="." instance=ExtResource("34_gm670")]
 position = Vector2(-64, 709)
+=======
+>>>>>>> Stashed changes
