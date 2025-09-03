@@ -148,7 +148,7 @@ texture = ExtResource("3_2q68a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_1ene3")
+&"": SubResource("AnimationLibrary_1ene3")
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
