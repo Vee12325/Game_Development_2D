@@ -15,3 +15,4 @@ func _ready() -> void:
 func _free_level() -> void:
 	PlayerManager.unparent_player( self )
 	queue_free()
+	
