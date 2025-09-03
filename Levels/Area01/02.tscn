@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://chcb2oelfl72f"]
+[gd_scene load_steps=36 format=4 uid="uid://chcb2oelfl72f"]
 
 [ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_1ohot"]
 [ext_resource type="AudioStream" uid="uid://io7jxqk648xa" path="res://Levels/music/example_music_01.ogg" id="2_5s7x6"]
@@ -33,6 +33,7 @@
 [ext_resource type="Resource" uid="uid://prvahwyi1iha" path="res://Items/apple.tres" id="31_fw76p"]
 [ext_resource type="PackedScene" uid="uid://c61baowgewycx" path="res://Interactables/arrow/arrow.tscn" id="33_gm670"]
 [ext_resource type="PackedScene" uid="uid://b7x3cvq6i0qvf" path="res://Enemies/Slime/slime.tscn" id="33_mdb57"]
+[ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://Enemies/goblin/goblin.tscn" id="34_gm670"]
 
 [sub_resource type="GDScript" id="GDScript_ootk3"]
 script/source = "extends Node
@@ -310,15 +311,64 @@ position = Vector2(169.626, 137.626)
 item_data = ExtResource("31_fw76p")
 
 [node name="Slime" parent="." instance=ExtResource("33_mdb57")]
-position = Vector2(198, 262)
+position = Vector2(610, 349)
 
 [node name="Arrow" parent="." instance=ExtResource("33_gm670")]
 position = Vector2(96, 200)
-fire_audio = null
 
 [node name="Arrow3" parent="." instance=ExtResource("33_gm670")]
 position = Vector2(96, 200)
 
 [node name="Arrow2" parent="." instance=ExtResource("33_gm670")]
 position = Vector2(92, 233)
-fire_audio = null
+
+[node name="Slime2" parent="." instance=ExtResource("33_mdb57")]
+position = Vector2(-254, 576)
+
+[node name="Slime3" parent="." instance=ExtResource("33_mdb57")]
+position = Vector2(-256, 816)
+
+[node name="Slime4" parent="." instance=ExtResource("33_mdb57")]
+position = Vector2(-706, 563)
+
+[node name="Slime5" parent="." instance=ExtResource("33_mdb57")]
+position = Vector2(-710, 816)
+
+[node name="Goblin" parent="." instance=ExtResource("34_gm670")]
+position = Vector2(-612, 610)
+
+[node name="Goblin2" parent="." instance=ExtResource("34_gm670")]
+position = Vector2(-305, 615)
+
+[node name="Goblin3" parent="." instance=ExtResource("34_gm670")]
+position = Vector2(-616, 775)
+
+[node name="Goblin4" parent="." instance=ExtResource("34_gm670")]
+position = Vector2(-309, 776)
+
+[node name="Goblin5" parent="." instance=ExtResource("34_gm670")]
+position = Vector2(-456, 686)
+
+[node name="Goblin6" parent="." instance=ExtResource("34_gm670")]
+position = Vector2(-217, 337)
+
+[node name="Goblin7" parent="." instance=ExtResource("34_gm670")]
+position = Vector2(-226, 123)
+
+[node name="Slime6" parent="." instance=ExtResource("33_mdb57")]
+position = Vector2(-639, 114)
+
+[node name="Slime7" parent="." instance=ExtResource("33_mdb57")]
+position = Vector2(-639, 316)
+
+[node name="Slime8" parent="." instance=ExtResource("33_mdb57")]
+position = Vector2(-456, 212)
+
+[node name="Slime9" parent="." instance=ExtResource("33_mdb57")]
+position = Vector2(9, 593)
+
+[node name="Slime10" parent="." instance=ExtResource("33_mdb57")]
+position = Vector2(147, 361)
+
+[node name="Goblin8" parent="." instance=ExtResource("34_gm670")]
+position = Vector2(-34, 389)
