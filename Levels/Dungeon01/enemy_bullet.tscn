@@ -27,6 +27,6 @@ volume_db = 24.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 texture = ExtResource("3_bmska")
-texture_scale = 11.95
+texture_scale = 0.15
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
