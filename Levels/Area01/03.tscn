@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://di637arhv02o2"]
+[gd_scene load_steps=17 format=4 uid="uid://di637arhv02o2"]
 
 [ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_bspbj"]
 [ext_resource type="AudioStream" uid="uid://io7jxqk648xa" path="res://Levels/music/example_music_01.ogg" id="2_wavkr"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://d4nhxau2t5qvx" path="res://Props/torches/torch_dungeon.tscn" id="10_lry6g"]
 [ext_resource type="PackedScene" uid="uid://cldjbf03xmdqt" path="res://Interactables/TreasureChest/treasure-chest.tscn" id="11_v72oj"]
 [ext_resource type="PackedScene" uid="uid://c0u0ivqxbom5y" path="res://Trap/newmoster.tscn" id="12_v72oj"]
+[ext_resource type="PackedScene" uid="uid://d4igjv570x7c4" path="res://Props/Plants/plant.tscn" id="13_55lxj"]
+[ext_resource type="PackedScene" uid="uid://65ascbiim87m" path="res://Trap/newtrap.tscn" id="14_n7k4n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lry6g"]
 texture = ExtResource("10_5waxo")
@@ -249,7 +251,7 @@ position = Vector2(881, -166)
 position = Vector2(708, 320)
 
 [node name="Treasure-chest" parent="." instance=ExtResource("11_v72oj")]
-position = Vector2(867, 111)
+position = Vector2(870, 106)
 
 [node name="item2" parent="." instance=ExtResource("9_crp14")]
 position = Vector2(567, 165)
@@ -295,3 +297,45 @@ position = Vector2(71, 74)
 
 [node name="Goblin11" parent="." instance=ExtResource("12_v72oj")]
 position = Vector2(611, 175)
+
+[node name="Plant" parent="." instance=ExtResource("13_55lxj")]
+position = Vector2(392, -75)
+
+[node name="Plant2" parent="." instance=ExtResource("13_55lxj")]
+position = Vector2(775, 86)
+
+[node name="Plant3" parent="." instance=ExtResource("13_55lxj")]
+position = Vector2(-15, 374)
+
+[node name="Plant4" parent="." instance=ExtResource("13_55lxj")]
+position = Vector2(-13, 59)
+
+[node name="Plant5" parent="." instance=ExtResource("13_55lxj")]
+position = Vector2(874, 332)
+
+[node name="Plant6" parent="." instance=ExtResource("13_55lxj")]
+position = Vector2(935, -174)
+
+[node name="Plant7" parent="." instance=ExtResource("13_55lxj")]
+position = Vector2(459, -138)
+
+[node name="Plant8" parent="." instance=ExtResource("13_55lxj")]
+position = Vector2(625, -49)
+
+[node name="Plant9" parent="." instance=ExtResource("13_55lxj")]
+position = Vector2(489, 304)
+
+[node name="Plant10" parent="." instance=ExtResource("13_55lxj")]
+position = Vector2(300, 81)
+
+[node name="Arrow" parent="." instance=ExtResource("14_n7k4n")]
+position = Vector2(141, 156)
+
+[node name="Arrow2" parent="." instance=ExtResource("14_n7k4n")]
+position = Vector2(613, 66)
+
+[node name="Arrow3" parent="." instance=ExtResource("14_n7k4n")]
+position = Vector2(767, -56)
+
+[node name="Arrow4" parent="." instance=ExtResource("14_n7k4n")]
+position = Vector2(459, -142)
