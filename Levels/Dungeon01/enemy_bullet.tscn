@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ehce10qi0prp"]
+
+[ext_resource type="Script" uid="uid://2jlm16qybci0" path="res://Levels/Dungeon01/enemy_bullet.gd" id="1_y1mw5"]
+[ext_resource type="Texture2D" uid="uid://cqqfn48y3fsqp" path="res://Levels/Dungeon01/ไฟ.png" id="2_bmska"]
+[ext_resource type="Texture2D" uid="uid://ck5kiect6ce0r" path="res://Levels/Dungeon01/circle_05.png" id="3_bmska"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mgp66"]
+radius = 8.0
+
+[node name="EnemyBullet" type="Area2D"]
+script = ExtResource("1_y1mw5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, 1)
+rotation = 6.26708
+scale = Vector2(0.158682, 0.17325)
+texture = ExtResource("2_bmska")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -0.0211822
+scale = Vector2(-0.694626, 0.483721)
+shape = SubResource("CircleShape2D_mgp66")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+rotation = 1.46814
+volume_db = 24.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = ExtResource("3_bmska")
+texture_scale = 11.95
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
