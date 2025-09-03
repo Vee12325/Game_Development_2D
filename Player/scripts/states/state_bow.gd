@@ -7,49 +7,41 @@ const ARROW = preload("res://Interactables/arrow/arrow.tscn")
 var direction : Vector2 = Vector2.ZERO
 var next_state : State = null
 
-
-func _ready():
-	pass # Replace with function body.
-
-
-
-## What happens when the player enters this State?
 func enter() -> void:
-	player.update_animation( "bow" )
-	player.animation_player.animation_finished.connect( _on_animation_finished )
+	player.update_animation("bow")
 	direction = player.cardinal_direction
 	
-	var arrow : Arrow = ARROW.instantiate()
-	player.add_sibling( arrow )
-	arrow.global_position = player.global_position + ( direction * 32 )
-	arrow.fire( direction )
-	pass
+	# เริ่ม loop ยิง
+	_schedule_next_shot()
 
-
-## What happens when the player exits this State?
 func exit() -> void:
-	player.animation_player.animation_finished.disconnect( _on_animation_finished )
 	next_state = null
 	pass
 
-
-## What happens during the _process update in this State?
-func process( _delta : float ) -> State:
+func process(_delta: float) -> State:
 	player.velocity = Vector2.ZERO
 	return next_state
 
-
-## What happens during the _physics_process update in this State?
-func physics( _delta : float ) -> State:
+func physics(_delta: float) -> State:
 	return null
 
-
-## What happens with input events in this State?
-func handle_input( _event: InputEvent ) -> State:
+func handle_input(_event: InputEvent) -> State:
 	return null
 
+# =========================
+# ยิงลูกธนูอัตโนมัติ
+# =========================
+func _schedule_next_shot() -> void:
+	var delay = randf_range(10.0, 15.0) # สุ่มเวลาระหว่าง 10–15 วิ
+	get_tree().create_timer(delay).timeout.connect(_fire_arrow)
 
+func _fire_arrow() -> void:
+	direction = player.cardinal_direction
 
-func _on_animation_finished( anim_name : String ) -> void:
-	next_state = idle
-	pass
+	var arrow: Arrow = ARROW.instantiate()
+	player.add_sibling(arrow)
+	arrow.global_position = player.global_position + (direction * 32)
+	arrow.fire(direction)
+
+	# ยิงเสร็จ ตั้งเวลารอบใหม่
+	_schedule_next_shot()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cq32mohonpsw3"]
+[gd_scene load_steps=9 format=3 uid="uid://cq32mohonpsw3"]
 
 [ext_resource type="Texture2D" uid="uid://d01qv0qqg01ba" path="res://Tile Maps/Sprites/Grass-01.png" id="1_tnlva"]
 [ext_resource type="Texture2D" uid="uid://fwby631k8pda" path="res://Tile Maps/Sprites/dungeon_entrance.png" id="2_x618i"]
+[ext_resource type="Texture2D" uid="uid://dbxmb6b8s6dta" path="res://Tile Maps/Sprites/water_animation_demo.png" id="3_2lnxq"]
 [ext_resource type="Script" uid="uid://bwx222a4l2s5v" path="res://Tile Maps/level_tile_map_layer.gd" id="3_et63e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n2ps0"]
@@ -534,6 +535,34 @@ texture_region_size = Vector2i(32, 32)
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, -8.5, -16, -8.5, 16, 16, 16)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xudar"]
+texture = ExtResource("3_2lnxq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_8axs6"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 16
@@ -545,6 +574,7 @@ custom_data_layer_0/name = "footstep_type"
 custom_data_layer_0/type = 2
 sources/0 = SubResource("TileSetAtlasSource_n2ps0")
 sources/1 = SubResource("TileSetAtlasSource_52cmm")
+sources/2 = SubResource("TileSetAtlasSource_xudar")
 
 [node name="grass-tiles-01" type="TileMapLayer" groups=["tilemaps"]]
 z_index = -1
