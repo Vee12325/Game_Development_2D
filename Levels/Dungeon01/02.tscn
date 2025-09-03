@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cooteplx34jjo"]
+[gd_scene load_steps=12 format=4 uid="uid://cooteplx34jjo"]
 
 [ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_b5e4r"]
 [ext_resource type="AudioStream" uid="uid://bss1hbkoufxql" path="res://Levels/music/example_music_03.ogg" id="2_amvwt"]
@@ -6,6 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://bcskysr5no5a6" path="res://Tile Maps/dungeon_tiles_01.tscn" id="3_32xo2"]
 [ext_resource type="PackedScene" uid="uid://ts44atx75aww" path="res://Interactables/dungeon/locked_door.tscn" id="4_khhtj"]
 [ext_resource type="PackedScene" uid="uid://vlpiuopcomwi" path="res://Levels/level_transition.tscn" id="4_po0y8"]
+[ext_resource type="PackedScene" uid="uid://b4jqibhvnwmda" path="res://Interactables/dungeon/pushable_statue.tscn" id="7_bbxeb"]
+[ext_resource type="PackedScene" uid="uid://c3680a4tx63yj" path="res://Levels/Dungeon01/mob.tscn" id="8_os54b"]
+[ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://Enemies/goblin/goblin.tscn" id="9_6xrvw"]
+[ext_resource type="PackedScene" uid="uid://b7x3cvq6i0qvf" path="res://Enemies/Slime/slime.tscn" id="10_labp1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f8v6h"]
 
 [node name="02" type="Node2D"]
 script = ExtResource("1_b5e4r")
@@ -35,3 +41,43 @@ side = 1
 position = Vector2(256, -80)
 level = "res://Levels/Dungeon01/04.tscn"
 side = 2
+
+[node name="PushableStatue" parent="." instance=ExtResource("7_bbxeb")]
+position = Vector2(196, -46)
+
+[node name="PushableStatue2" parent="." instance=ExtResource("7_bbxeb")]
+position = Vector2(313, -45)
+
+[node name="mob" parent="." instance=ExtResource("8_os54b")]
+position = Vector2(101, 63)
+physics_material_override = SubResource("PhysicsMaterial_f8v6h")
+
+[node name="mob2" parent="." instance=ExtResource("8_os54b")]
+position = Vector2(139, 164)
+
+[node name="mob3" parent="." instance=ExtResource("8_os54b")]
+position = Vector2(129, -22)
+
+[node name="mob4" parent="." instance=ExtResource("8_os54b")]
+position = Vector2(286, 10)
+
+[node name="mob5" parent="." instance=ExtResource("8_os54b")]
+position = Vector2(290, 114)
+
+[node name="Goblin" parent="." instance=ExtResource("9_6xrvw")]
+position = Vector2(202, 67)
+
+[node name="Goblin2" parent="." instance=ExtResource("9_6xrvw")]
+position = Vector2(144, 119)
+
+[node name="Goblin3" parent="." instance=ExtResource("9_6xrvw")]
+position = Vector2(389, -26)
+
+[node name="Goblin4" parent="." instance=ExtResource("9_6xrvw")]
+position = Vector2(372, 70)
+
+[node name="Slime" parent="." instance=ExtResource("10_labp1")]
+position = Vector2(194, -12)
+
+[node name="Slime2" parent="." instance=ExtResource("10_labp1")]
+position = Vector2(374, 169)
