@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bcskysr5no5a6" path="res://Tile Maps/dungeon_tiles_01.tscn" id="3_bpaqg"]
 [ext_resource type="PackedScene" uid="uid://dr4blo7ya448q" path="res://Levels/player_spawn.tscn" id="3_sp6rm"]
 [ext_resource type="PackedScene" uid="uid://vlpiuopcomwi" path="res://Levels/level_transition.tscn" id="4_bwwsp"]
-[ext_resource type="PackedScene" uid="uid://ch2oxh3rsa2fr" path="res://Interactables/dungeon/pressure_plate.tscn" id="5_hd3kv"]
+[ext_resource type="PackedScene" uid="uid://ddyu2a7h7mjba" path="res://Interactables/dungeon/pressure_plate.tscn" id="5_hd3kv"]
 [ext_resource type="PackedScene" uid="uid://da4qq8gb0idce" path="res://Interactables/dungeon/barred_door.tscn" id="6_ffenb"]
 [ext_resource type="PackedScene" uid="uid://b523kljtfiar7" path="res://quests/utility_nodes/quest_advance_trigger.tscn" id="6_ndegm"]
 [ext_resource type="PackedScene" uid="uid://cwby8egx8vwx2" path="res://quests/utility_nodes/quest_activated_switch.tscn" id="6_rsdf3"]
@@ -148,7 +148,7 @@ position = Vector2(-90, 231)
 position = Vector2(120, 157)
 
 [node name="mob4" parent="." instance=ExtResource("12_n8j0c")]
-position = Vector2(-261, 77)
+position = Vector2(-264, 95)
 
 [connection signal="entered_from_here" from="LevelTransition" to="LevelTransition/QuestActivatedSwitch/QuestAdvanceTrigger" method="advance_quest"]
 [connection signal="activated" from="PressurePlate" to="BarredDoor" method="open_door"]

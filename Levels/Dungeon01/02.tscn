@@ -55,7 +55,7 @@ physics_material_override = SubResource("PhysicsMaterial_f8v6h")
 shooting_interval = 3.0
 
 [node name="mob2" parent="." instance=ExtResource("8_os54b")]
-position = Vector2(124, 168)
+position = Vector2(118, 135)
 
 [node name="mob3" parent="." instance=ExtResource("8_os54b")]
 position = Vector2(129, -22)

@@ -1,18 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2ehapor5mcu3"]
-
-[ext_resource type="Script" path="res://item_block.gd" id="1_xmuuw"]
-[ext_resource type="Texture2D" path="res://Tile Maps/Screenshot 2025-09-03 161015-Photoroom.png" id="2_rqncx"]
+[gd_scene load_steps=2 format=3 uid="uid://d2ehapor5mcu3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4oqxr"]
 size = Vector2(73, 119)
 
 [node name="ItemBlock" type="Area2D"]
 collision_layer = 8
-script = ExtResource("1_xmuuw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_rqncx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, 5.5)
