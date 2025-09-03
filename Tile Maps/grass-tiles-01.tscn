@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cq32mohonpsw3"]
+[gd_scene load_steps=25 format=3 uid="uid://cq32mohonpsw3"]
 
 [ext_resource type="Texture2D" uid="uid://d01qv0qqg01ba" path="res://Tile Maps/Sprites/Grass-01.png" id="1_tnlva"]
 [ext_resource type="Texture2D" uid="uid://fwby631k8pda" path="res://Tile Maps/Sprites/dungeon_entrance.png" id="2_x618i"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cggsutsoc2yrp" path="res://Tile Maps/Sprites/merlin-forfun-tiles.png" id="8_xk6h8"]
 [ext_resource type="Texture2D" uid="uid://bmuo6yk2k8wtd" path="res://Tile Maps/Sprites/ChatGPT Image 20 ส.ค. 2568 17_04_27.png" id="9_hh87l"]
 [ext_resource type="Texture2D" uid="uid://du3vg8cxifydf" path="res://Tile Maps/Sprites/ChatGPT Image 20 ส.ค. 2568 17_14_36.png" id="10_rmim3"]
+[ext_resource type="Texture2D" uid="uid://dbxmb6b8s6dta" path="res://Tile Maps/Sprites/water_animation_demo.png" id="10_xk6h8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n2ps0"]
 texture = ExtResource("1_tnlva")
@@ -5258,6 +5259,34 @@ texture_region_size = Vector2i(32, 32)
 14:15/0 = 0
 15:15/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hh87l"]
+texture = ExtResource("10_xk6h8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ylgjh"]
 texture = ExtResource("10_rmim3")
 texture_region_size = Vector2i(32, 32)
@@ -5345,6 +5374,7 @@ sources/6 = SubResource("TileSetAtlasSource_vmmdh")
 sources/7 = SubResource("TileSetAtlasSource_fghhw")
 sources/9 = SubResource("TileSetAtlasSource_ylgjh")
 sources/10 = SubResource("TileSetAtlasSource_r3oc0")
+sources/8 = SubResource("TileSetAtlasSource_hh87l")
 
 [node name="grass-tiles-01" type="TileMapLayer" groups=["tilemaps"]]
 z_index = -1
