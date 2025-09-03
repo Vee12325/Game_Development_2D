@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2ue5w5n5kdj8"]
+
+[ext_resource type="Script" uid="uid://kr6c2ypdtxhg" path="res://Trap/trap.gd" id="1_snrhm"]
+[ext_resource type="Texture2D" uid="uid://bc7gnqcb6yir6" path="res://Trap/Spear.png" id="2_7cm7y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nhqs"]
+size = Vector2(8, 64)
+
+[sub_resource type="Animation" id="Animation_d1hua"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spear:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_bf7vu"]
+resource_name = "push"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spear:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667, 1.93333, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 11, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0666667, 0.966667, 1.16667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tjp4j"]
+_data = {
+&"RESET": SubResource("Animation_d1hua"),
+&"push": SubResource("Animation_bf7vu")
+}
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["Trap"]]
+script = ExtResource("1_snrhm")
+
+[node name="Spear" type="Sprite2D" parent="."]
+position = Vector2(185, 133)
+texture = ExtResource("2_7cm7y")
+hframes = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(186, 129)
+shape = SubResource("RectangleShape2D_8nhqs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tjp4j")
+}

@@ -316,6 +316,9 @@ position = Vector2(198, 262)
 position = Vector2(96, 200)
 fire_audio = null
 
+[node name="Arrow3" parent="." instance=ExtResource("33_gm670")]
+position = Vector2(96, 200)
+
 [node name="Arrow2" parent="." instance=ExtResource("33_gm670")]
 position = Vector2(92, 233)
 fire_audio = null
