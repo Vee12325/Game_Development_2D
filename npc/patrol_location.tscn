@@ -52,5 +52,5 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("2_4cfmi")
-text = "wait: 0s"
+text = "wait: 0.0s"
 horizontal_alignment = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://2p13wtrmfvqv"]
+[gd_scene load_steps=28 format=4 uid="uid://2p13wtrmfvqv"]
 
 [ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_xgghs"]
 [ext_resource type="AudioStream" uid="uid://io7jxqk648xa" path="res://Levels/music/example_music_01.ogg" id="2_u3xya"]
@@ -13,7 +13,34 @@
 [ext_resource type="Resource" uid="uid://bsmrcd36bi0th" path="res://Items/w_iron_sword.tres" id="12_hqw0x"]
 [ext_resource type="Resource" uid="uid://bi8j7ai8qulyp" path="res://Items/w_katana.tres" id="13_7qqfa"]
 [ext_resource type="Resource" uid="uid://c0co5vj5hgk12" path="res://Items/stone.tres" id="14_offyj"]
+[ext_resource type="PackedScene" uid="uid://bi8crg3nv50qw" path="res://npc/npc.tscn" id="15_7727t"]
+[ext_resource type="Resource" uid="uid://bqfxxks18ou8u" path="res://npc/00_npcs/npc_02.tres" id="16_svxhr"]
+[ext_resource type="PackedScene" uid="uid://dpenv0euqqlkg" path="res://npc/npc_behavior_patrol.tscn" id="17_cnw57"]
+[ext_resource type="PackedScene" uid="uid://dyhn3j7qk4dqw" path="res://npc/patrol_location.tscn" id="18_0asvh"]
+[ext_resource type="PackedScene" uid="uid://cwby8egx8vwx2" path="res://quests/utility_nodes/quest_activated_switch.tscn" id="19_w1irt"]
+[ext_resource type="Resource" uid="uid://cvnr3a38pmudn" path="res://quests/recover_lost_flute.tres" id="20_xonce"]
+[ext_resource type="PackedScene" uid="uid://b22o8rtjyby8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="21_4lnbj"]
+[ext_resource type="Script" uid="uid://7qrcj0xrfdwc" path="res://Interactables/dialog/scripts/dialog_text.gd" id="22_dss6c"]
 [ext_resource type="PackedScene" uid="uid://cf0a8hxch6kfd" path="res://Props/pot/pot.tscn" id="23_386ky"]
+[ext_resource type="Script" uid="uid://bhoxv42n8rdsq" path="res://Interactables/dialog/scripts/dialog_choice.gd" id="23_w10mv"]
+[ext_resource type="Script" uid="uid://c80ln4eok2stu" path="res://Interactables/dialog/scripts/dialog_branch.gd" id="24_xxcud"]
+[ext_resource type="PackedScene" uid="uid://b523kljtfiar7" path="res://quests/utility_nodes/quest_advance_trigger.tscn" id="25_p7crr"]
+[ext_resource type="Script" uid="uid://cj17f33sisctc" path="res://quests/utility_nodes/quest_activated_switch.gd" id="26_l2p1c"]
+
+[sub_resource type="GDScript" id="GDScript_15n4q"]
+script/source = "extends Node
+
+@onready var quest_advance_trigger: QuestAdvanceTrigger = $\"..\"
+
+
+func _ready() -> void:
+	quest_advance_trigger.advanced.connect( quest_complete )
+
+
+func quest_complete() -> void:
+	PlayerManager.INVENTORY_DATA.use_item( load(\"res://Items/magical_flute.tres\") )
+	pass
+"
 
 [node name="02" type="Node2D"]
 y_sort_enabled = true
@@ -72,9 +99,6 @@ position = Vector2(352, 10)
 [node name="Pot13" parent="Pots" instance=ExtResource("23_386ky")]
 position = Vector2(373, 93)
 
-[node name="Pot14" parent="Pots" instance=ExtResource("23_386ky")]
-position = Vector2(73, 75)
-
 [node name="LevelTransition" parent="." instance=ExtResource("7_4skut")]
 position = Vector2(288, 240)
 level = "uid://chcb2oelfl72f"
@@ -86,3 +110,147 @@ side = 3
 [node name="Shopkeeper" parent="." instance=ExtResource("7_cdc6r")]
 position = Vector2(333, 94)
 shop_inventory = Array[ExtResource("8_54jjq")]([ExtResource("9_ktyg8"), ExtResource("10_qkluu"), ExtResource("11_ena7o"), ExtResource("12_hqw0x"), ExtResource("13_7qqfa"), ExtResource("14_offyj")])
+
+[node name="NPC_NERO" parent="." instance=ExtResource("15_7727t")]
+position = Vector2(82.076, 165)
+npc_resource = ExtResource("16_svxhr")
+
+[node name="NpcBehaviorPatrol" parent="NPC_NERO" instance=ExtResource("17_cnw57")]
+
+[node name="PatrolLocation" parent="NPC_NERO/NpcBehaviorPatrol" instance=ExtResource("18_0asvh")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(75.924, -39)
+
+[node name="PatrolLocation2" parent="NPC_NERO/NpcBehaviorPatrol" instance=ExtResource("18_0asvh")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(187.924, -17)
+
+[node name="PatrolLocation3" parent="NPC_NERO/NpcBehaviorPatrol" instance=ExtResource("18_0asvh")]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(5.92401, 46)
+wait_time = 3.0
+
+[node name="PatrolLocation4" parent="NPC_NERO/NpcBehaviorPatrol" instance=ExtResource("18_0asvh")]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(7.92401, -81)
+
+[node name="QuestActivatedSwitch" parent="NPC_NERO" instance=ExtResource("19_w1irt")]
+remove_when_activated = true
+react_to_global_signal = true
+linked_quest = ExtResource("20_xonce")
+settings_summary = "UPDATE QUEST:
+Quest: Recover Lost Magical Flute
+Checking if player has quest"
+
+[node name="DialogInteraction" parent="NPC_NERO/QuestActivatedSwitch" instance=ExtResource("21_4lnbj")]
+
+[node name="DialogText" type="Node" parent="NPC_NERO/QuestActivatedSwitch/DialogInteraction"]
+script = ExtResource("22_dss6c")
+text = "Yo! Hero! Will you help retreive my
+magical flute from the dark dungeon?
+Please, pretty please?"
+npc_info = ExtResource("16_svxhr")
+
+[node name="DialogChoice" type="Node" parent="NPC_NERO/QuestActivatedSwitch/DialogInteraction"]
+script = ExtResource("23_w10mv")
+npc_info = ExtResource("16_svxhr")
+
+[node name="DialogBranch" type="Node" parent="NPC_NERO/QuestActivatedSwitch/DialogInteraction/DialogChoice"]
+script = ExtResource("24_xxcud")
+text = "You can count on it!"
+npc_info = ExtResource("16_svxhr")
+
+[node name="QuestAdvanceTrigger" parent="NPC_NERO/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch" instance=ExtResource("25_p7crr")]
+position = Vector2(82, 169.927)
+signal_name = "selected"
+linked_quest = ExtResource("20_xonce")
+settings_summary = "UPDATE QUEST:
+Quest: Recover Lost Magical Flute
+Step: 0 - N/A
+Complete: false"
+
+[node name="DialogText" type="Node" parent="NPC_NERO/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("22_dss6c")
+text = "Thank you dear hero! You are a true specimen!"
+npc_info = ExtResource("16_svxhr")
+
+[node name="DialogText2" type="Node" parent="NPC_NERO/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("22_dss6c")
+text = "Oh, and be careful of the evil wizard who lurks in the dungeon!"
+npc_info = ExtResource("16_svxhr")
+
+[node name="DialogBranch2" type="Node" parent="NPC_NERO/QuestActivatedSwitch/DialogInteraction/DialogChoice"]
+script = ExtResource("24_xxcud")
+text = "NO! You're crazy bananas!"
+npc_info = ExtResource("16_svxhr")
+
+[node name="DialogText" type="Node" parent="NPC_NERO/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("22_dss6c")
+text = "Geez! Some lousy hero you are...."
+npc_info = ExtResource("16_svxhr")
+
+[node name="QuestActivatedSwitch3" type="Node2D" parent="NPC_NERO"]
+script = ExtResource("26_l2p1c")
+check_type = 3
+remove_when_activated = true
+react_to_global_signal = true
+linked_quest = ExtResource("20_xonce")
+quest_complete = true
+settings_summary = "UPDATE QUEST:
+Quest: Recover Lost Magical Flute
+Checking if quest is complete"
+
+[node name="QuestActivatedSwitch2" parent="NPC_NERO/QuestActivatedSwitch3" instance=ExtResource("19_w1irt")]
+position = Vector2(0, -18)
+react_to_global_signal = true
+linked_quest = ExtResource("20_xonce")
+settings_summary = "UPDATE QUEST:
+Quest: Recover Lost Magical Flute
+Checking if player has quest"
+
+[node name="QuestActivatedSwitch2" parent="NPC_NERO/QuestActivatedSwitch3/QuestActivatedSwitch2" instance=ExtResource("19_w1irt")]
+check_type = 2
+remove_when_activated = true
+react_to_global_signal = true
+linked_quest = ExtResource("20_xonce")
+quest_step = 3
+settings_summary = "UPDATE QUEST:
+Quest: Recover Lost Magical Flute
+Check if player is on step: return magical flute to nero"
+
+[node name="DialogInteraction" parent="NPC_NERO/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch2" instance=ExtResource("21_4lnbj")]
+
+[node name="DialogText" type="Node" parent="NPC_NERO/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("22_dss6c")
+text = "Thank you Hero! I lost my flute in the cave to the north."
+npc_info = ExtResource("16_svxhr")
+
+[node name="QuestActivatedSwitch" parent="NPC_NERO/QuestActivatedSwitch3/QuestActivatedSwitch2" instance=ExtResource("19_w1irt")]
+check_type = 2
+react_to_global_signal = true
+linked_quest = ExtResource("20_xonce")
+quest_step = 3
+settings_summary = "UPDATE QUEST:
+Quest: Recover Lost Magical Flute
+Check if player is on step: return magical flute to nero"
+
+[node name="DialogInteraction2" parent="NPC_NERO/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch" instance=ExtResource("21_4lnbj")]
+
+[node name="DialogText" type="Node" parent="NPC_NERO/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch/DialogInteraction2"]
+script = ExtResource("22_dss6c")
+text = "Wow you found my flute!
+It's not much, but here's a reward!"
+npc_info = ExtResource("16_svxhr")
+
+[node name="QuestAdvanceTrigger" parent="NPC_NERO/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch/DialogInteraction2" instance=ExtResource("25_p7crr")]
+signal_name = "finished"
+linked_quest = ExtResource("20_xonce")
+quest_step = 3
+quest_complete = true
+settings_summary = "UPDATE QUEST:
+Quest: Recover Lost Magical Flute
+Step: 3 - return magical flute to nero
+Complete: true"
+
+[node name="Node" type="Node" parent="NPC_NERO/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch/DialogInteraction2/QuestAdvanceTrigger"]
+script = SubResource("GDScript_15n4q")

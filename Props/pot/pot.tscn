@@ -128,7 +128,7 @@ frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_yhl3u")
+&"": SubResource("AnimationLibrary_yhl3u")
 }
 
 [node name="Throwable" parent="." instance=ExtResource("3_y3mbe")]
