@@ -14,6 +14,7 @@ var max_hp : int = 6
 
 var level : int = 1
 var xp : int = 0
+var score = 0
 
 var attack : int = 1 :
 	set( v ):
@@ -157,7 +158,9 @@ func revive_player() -> void:
 	update_hp( 99 )
 	state_machine.change_state( $StateMachine/Idle )
 
-
+func add_score(value: int):
+	score += value
+	print("Current Score: ", score)
 
 func update_damage_values() -> void:
 	var damage_value : int = attack + PlayerManager.INVENTORY_DATA.get_attack_bonus()
