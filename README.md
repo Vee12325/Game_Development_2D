@@ -71,3 +71,6 @@
 2. ดาวน์โหลดหรือโคลนโปรเจกต์นี้:
    ```bash
    git clone https://github.com/USERNAME/REPOSITORY.git
+
+## ทดลองเล่น
+https://nattapongd-coder.github.io/nattapong-coder.github.io/
