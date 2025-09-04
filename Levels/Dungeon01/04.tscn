@@ -1137,7 +1137,7 @@ position = Vector2(115, 192)
 texture = SubResource("GradientTexture2D_si5al")
 
 [node name="ItemDropper" parent="DarkWizardBoss" instance=ExtResource("15_wberl")]
-position = Vector2(314, 192)
+position = Vector2(315, 216)
 item_data = ExtResource("16_sf2tf")
 
 [node name="QuestAdvanceTrigger" parent="DarkWizardBoss/ItemDropper" instance=ExtResource("17_ngji5")]

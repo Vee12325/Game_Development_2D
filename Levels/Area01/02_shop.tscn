@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://2p13wtrmfvqv"]
+[gd_scene load_steps=31 format=4 uid="uid://2p13wtrmfvqv"]
 
 [ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_xgghs"]
 [ext_resource type="AudioStream" uid="uid://io7jxqk648xa" path="res://Levels/music/example_music_01.ogg" id="2_u3xya"]
@@ -26,6 +26,9 @@
 [ext_resource type="Script" uid="uid://c80ln4eok2stu" path="res://Interactables/dialog/scripts/dialog_branch.gd" id="24_xxcud"]
 [ext_resource type="PackedScene" uid="uid://b523kljtfiar7" path="res://quests/utility_nodes/quest_advance_trigger.tscn" id="25_p7crr"]
 [ext_resource type="Script" uid="uid://cj17f33sisctc" path="res://quests/utility_nodes/quest_activated_switch.gd" id="26_l2p1c"]
+[ext_resource type="PackedScene" uid="uid://cldjbf03xmdqt" path="res://Items/treasure-chest.tscn" id="27_svxhr"]
+[ext_resource type="PackedScene" uid="uid://d4nhxau2t5qvx" path="res://Props/torches/torch_dungeon.tscn" id="28_cnw57"]
+[ext_resource type="Resource" uid="uid://cixpflhl0cjvo" path="res://Items/gem.tres" id="29_0asvh"]
 
 [sub_resource type="GDScript" id="GDScript_15n4q"]
 script/source = "extends Node
@@ -112,7 +115,7 @@ position = Vector2(333, 94)
 shop_inventory = Array[ExtResource("8_54jjq")]([ExtResource("9_ktyg8"), ExtResource("10_qkluu"), ExtResource("11_ena7o"), ExtResource("12_hqw0x"), ExtResource("13_7qqfa"), ExtResource("14_offyj")])
 
 [node name="NPC_NERO" parent="." instance=ExtResource("15_7727t")]
-position = Vector2(82.076, 165)
+position = Vector2(75.0755, 164.952)
 npc_resource = ExtResource("16_svxhr")
 
 [node name="NpcBehaviorPatrol" parent="NPC_NERO" instance=ExtResource("17_cnw57")]
@@ -254,3 +257,37 @@ Complete: true"
 
 [node name="Node" type="Node" parent="NPC_NERO/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch/DialogInteraction2/QuestAdvanceTrigger"]
 script = SubResource("GDScript_15n4q")
+
+[node name="Treasure-chest" parent="." instance=ExtResource("27_svxhr")]
+position = Vector2(172, 63)
+item_data = ExtResource("9_ktyg8")
+
+[node name="Treasure-chest2" parent="." instance=ExtResource("27_svxhr")]
+position = Vector2(293, 14)
+item_data = ExtResource("11_ena7o")
+
+[node name="Treasure-chest3" parent="." instance=ExtResource("27_svxhr")]
+position = Vector2(331, 13)
+item_data = ExtResource("14_offyj")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.572988, 0.572988, 0.572988, 1)
+
+[node name="TorchDungeon" parent="." instance=ExtResource("28_cnw57")]
+position = Vector2(373, 57)
+
+[node name="TorchDungeon2" parent="." instance=ExtResource("28_cnw57")]
+position = Vector2(80, 62)
+
+[node name="TorchDungeon3" parent="." instance=ExtResource("28_cnw57")]
+position = Vector2(69, 226)
+
+[node name="TorchDungeon4" parent="." instance=ExtResource("28_cnw57")]
+position = Vector2(377, 222)
+
+[node name="TorchDungeon5" parent="." instance=ExtResource("28_cnw57")]
+position = Vector2(233, 223)
+
+[node name="Treasure-chest4" parent="." instance=ExtResource("27_svxhr")]
+position = Vector2(134, 64)
+item_data = ExtResource("29_0asvh")

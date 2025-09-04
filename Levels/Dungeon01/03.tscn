@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://caussts14k3by"]
+[gd_scene load_steps=14 format=4 uid="uid://caussts14k3by"]
 
 [ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_hvkdx"]
 [ext_resource type="AudioStream" uid="uid://bss1hbkoufxql" path="res://Levels/music/example_music_03.ogg" id="2_7ft4o"]
@@ -11,6 +11,8 @@
 [ext_resource type="Resource" uid="uid://dsahpb7gtws3g" path="res://Items/key_dungeon.tres" id="8_nq3e6"]
 [ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://Enemies/goblin/goblin.tscn" id="10_1uyi3"]
 [ext_resource type="PackedScene" uid="uid://d4nhxau2t5qvx" path="res://Props/torches/torch_dungeon.tscn" id="11_a43pa"]
+[ext_resource type="PackedScene" uid="uid://cldjbf03xmdqt" path="res://Items/treasure-chest.tscn" id="12_6tfp8"]
+[ext_resource type="Resource" uid="uid://gjda8on0uyn5" path="res://Items/a_tunic.tres" id="13_7gxcl"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_hvkdx")
@@ -111,5 +113,9 @@ position = Vector2(752, 308)
 
 [node name="TorchDungeon6" parent="." instance=ExtResource("11_a43pa")]
 position = Vector2(113, 318)
+
+[node name="Treasure-chest" parent="." instance=ExtResource("12_6tfp8")]
+position = Vector2(264, -207)
+item_data = ExtResource("13_7gxcl")
 
 [connection signal="enemies_defeated" from="EnemyCounter" to="ItemDropper" method="drop_item"]

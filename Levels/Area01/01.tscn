@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://7egb2012ff3b"]
+[gd_scene load_steps=25 format=4 uid="uid://7egb2012ff3b"]
 
 [ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_t4c53"]
 [ext_resource type="PackedScene" uid="uid://cq32mohonpsw3" path="res://Tile Maps/grass-tiles-01.tscn" id="3_rjvdv"]
@@ -17,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://b7x3cvq6i0qvf" path="res://Enemies/Slime/slime.tscn" id="15_ay7cg"]
 [ext_resource type="PackedScene" uid="uid://d4igjv570x7c4" path="res://Props/Plants/plant.tscn" id="16_vg1n0"]
 [ext_resource type="PackedScene" uid="uid://d4nhxau2t5qvx" path="res://Props/torches/torch_dungeon.tscn" id="17_2l6ck"]
+[ext_resource type="PackedScene" uid="uid://cldjbf03xmdqt" path="res://Items/treasure-chest.tscn" id="18_2l6ck"]
+[ext_resource type="Resource" uid="uid://bi48vid6jl4ua" path="res://Items/potion.tres" id="19_rbd2o"]
+[ext_resource type="Resource" uid="uid://bsmrcd36bi0th" path="res://Items/w_iron_sword.tres" id="20_suexf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n2ps0"]
 texture = ExtResource("4_t6rks")
@@ -1682,3 +1685,11 @@ position = Vector2(-4, 490)
 
 [node name="TorchDungeon10" parent="." instance=ExtResource("17_2l6ck")]
 position = Vector2(330, 689)
+
+[node name="Treasure-chest" parent="." instance=ExtResource("18_2l6ck")]
+position = Vector2(694, 511)
+item_data = ExtResource("19_rbd2o")
+
+[node name="Treasure-chest2" parent="." instance=ExtResource("18_2l6ck")]
+position = Vector2(128, 146)
+item_data = ExtResource("20_suexf")

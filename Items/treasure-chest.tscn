@@ -210,7 +210,7 @@ texture_scale = 0.5
 position = Vector2(0, -10)
 texture = ExtResource("3_ebwvl")
 hframes = 8
-frame = 4
+frame = 3
 
 [node name="Label" type="Label" parent="ItemSprite"]
 offset_left = 12.0

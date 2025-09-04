@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://Enemies/goblin/goblin.tscn" id="9_lry6g"]
 [ext_resource type="Texture2D" uid="uid://yil5t3yksahm" path="res://title_scene/sprites/tilemap_packed.png" id="10_5waxo"]
 [ext_resource type="PackedScene" uid="uid://d4nhxau2t5qvx" path="res://Props/torches/torch_dungeon.tscn" id="10_lry6g"]
-[ext_resource type="PackedScene" uid="uid://cldjbf03xmdqt" path="res://Interactables/TreasureChest/treasure-chest.tscn" id="11_v72oj"]
+[ext_resource type="PackedScene" uid="uid://cldjbf03xmdqt" path="res://Items/treasure-chest.tscn" id="11_v72oj"]
 [ext_resource type="PackedScene" uid="uid://c0u0ivqxbom5y" path="res://Trap/newmoster.tscn" id="12_v72oj"]
 [ext_resource type="PackedScene" uid="uid://d4igjv570x7c4" path="res://Props/Plants/plant.tscn" id="13_55lxj"]
 [ext_resource type="PackedScene" uid="uid://65ascbiim87m" path="res://Trap/newtrap.tscn" id="14_n7k4n"]
@@ -247,7 +247,7 @@ position = Vector2(881, -166)
 position = Vector2(708, 320)
 
 [node name="Treasure-chest" parent="." instance=ExtResource("11_v72oj")]
-position = Vector2(870, 106)
+position = Vector2(864, 109)
 
 [node name="TorchDungeon5" parent="." instance=ExtResource("10_lry6g")]
 position = Vector2(436, 61)
