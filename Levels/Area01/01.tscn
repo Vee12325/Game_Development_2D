@@ -1534,7 +1534,7 @@ position = Vector2(696, 240)
 position = Vector2(675, 561)
 
 [node name="Goblin9" parent="." instance=ExtResource("14_ay7cg")]
-position = Vector2(619, 292)
+position = Vector2(752, 688)
 
 [node name="Goblin10" parent="." instance=ExtResource("5_xqwo5")]
 position = Vector2(167, 190)
